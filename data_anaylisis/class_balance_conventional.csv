@@ -1,0 +1,10 @@
+contaminante,total_detectables,baja_count,alta_count,baja_pct,alta_pct
+lab_turbidity_ntu,508,257,251,50.6,49.4
+lab_tss_mg_l,47,24,23,51.1,48.9
+lab_doc_mg_l,526,263,263,50.0,50.0
+lab_toc_mg_l,45,24,21,53.3,46.7
+lab_nsol_mg_l,526,265,261,50.4,49.6
+lab_ntot_mg_l,45,23,22,51.1,48.9
+lab_nh4_mg_l,525,263,262,50.1,49.9
+lab_po4_mg_l,525,263,262,50.1,49.9
+lab_so4_mg_l,526,264,262,50.2,49.8

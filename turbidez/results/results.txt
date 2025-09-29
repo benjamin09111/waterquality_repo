@@ -1,0 +1,56 @@
+Base: Pérdida (MSE) en el conjunto de prueba: 169.6918
+    es decir, qué tan lejos están las predicciones, más bajo mejor.
+    RMSE: 13.0 FNU (13 unidades de diferencia con el valor real)
+
+V1: Pérdida (MSE) en el conjunto de prueba: 140.9173   
+    RMSE: 11.8 FNU
+
+[Muestra de prueba #1]
+  > Predicción: 140.67
+  > Valor Real: 136.62
+  > Diferencia: 4.06
+
+[Muestra de prueba #2]
+  > Predicción: 100.76
+  > Valor Real: 101.97
+  > Diferencia: 1.21
+
+[Muestra de prueba #3]
+  > Predicción: 113.04
+  > Valor Real: 84.45
+  > Diferencia: 28.59
+
+[Muestra de prueba #4]
+  > Predicción: 61.18
+  > Valor Real: 60.78
+  > Diferencia: 0.40
+
+[Muestra de prueba #5]
+  > Predicción: 57.95
+  > Valor Real: 55.64
+  > Diferencia: 2.31
+
+[Muestra de prueba #6]
+  > Predicción: 101.05
+  > Valor Real: 100.24
+  > Diferencia: 0.81
+
+[Muestra de prueba #7]
+  > Predicción: 181.12
+  > Valor Real: 166.68
+  > Diferencia: 14.44
+
+[Muestra de prueba #8]
+  > Predicción: 69.06
+  > Valor Real: 89.66
+  > Diferencia: 20.60
+
+[Muestra de prueba #9]
+  > Predicción: 57.13
+  > Valor Real: 51.67
+  > Diferencia: 5.46
+
+[Muestra de prueba #10]
+  > Predicción: 140.87
+  > Valor Real: 142.54
+  > Diferencia: 1.67

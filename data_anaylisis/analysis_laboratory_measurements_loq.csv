@@ -1,0 +1,13 @@
+column,total_rows,missing,pct_missing,numeric_count,non_numeric_non_missing,zeros_numeric,loq_like,zeros_effective,pct_zeros_effective
+index,529,0,0.0,529,0,1,0,1,0.19
+timestamp_iso,529,0,0.0,0,529,0,0,0,0.0
+lab_turbidity_ntu,529,21,3.97,508,0,0,0,0,0.0
+lab_tss_mg_l,529,482,91.12,47,0,0,0,0,0.0
+lab_doc_mg_l,529,3,0.57,526,0,0,0,0,0.0
+lab_toc_mg_l,529,484,91.49,45,0,0,0,0,0.0
+lab_nsol_mg_l,529,3,0.57,526,0,0,0,0,0.0
+lab_ntot_mg_l,529,484,91.49,45,0,0,0,0,0.0
+lab_nh4_mg_l,529,3,0.57,526,0,1,0,1,0.19
+lab_po4_mg_l,529,3,0.57,526,0,1,0,1,0.19
+lab_so4_mg_l,529,3,0.57,526,0,0,0,0,0.0
+sampling_method,529,0,0.0,0,529,0,0,0,0.0

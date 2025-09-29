@@ -1,0 +1,53 @@
+Objetivo: desarrollar un prototipo funcional utilizando una arquitectura de Transformer para la detección de turbidez en aguas residuales
+Datos: los datos otorgados por el dataset de prueba (sample).
+Preparación: ambos se sincronizan temporalmente para asegurar que cada firma espectral correspondiera a su medición de turbidez correcta.
+             Se divide en un 80% para entrenamiento y un 20% para prueba. La matriz de características X fue normalizada utilizando StandardScaler de Scikit-learn para estandarizar el rango de los datos de entrada, un paso crucial para el correcto entrenamiento de redes neuronales.
+
+Modelo
+modelo de regresión basado en la arquitectura Transformer Encoder utilizando PyTorch.
+
+El modelo fue entrenado durante 200 épocas con el objetivo de minimizar el Error Cuadrático Medio (MSE) entre sus predicciones y los valores reales de turbidez, utilizando el optimizador Adam.
+
+En resumen, elegimos el Encoder-Only porque nuestro objetivo no es generar un nuevo espectro ni traducirlo, sino entenderlo a fondo para poder clasificarlo.
+
+---Resultados para la Turbidez en el Paper UDP
+
+Long Short-Term Memory (LSTM).
+
+AUC (Área bajo la curva): 0,688 
+F1-score: 0,549 
+Exactitud (Accuracy): 73,2% 
+Brecha de Generalización (Gap): 13,0%
+
+Como el modelo v1 es de regresión, se transforma a clasificación y se 
+ocupan los mismos umbrales que el paper de la udp para crear las clases y 
+calcular las métricas.
+
+Evaluación de Regresión: Inicialmente, el modelo se evaluó en su tarea principal de regresión sobre el conjunto de prueba, obteniendo un MSE final.
+
+Conversión a Clasificación: Para comparar con las métricas del paper (F1-score y AUC), se transformó el problema de regresión a uno de clasificación binaria ("Bajo" vs. "Alto"), adoptando exactamente los mismos umbrales definidos en la tesis:
+
+Clase "Bajo" (0): Mediciones con turbidez < 50 NTU.
+
+Clase "Alto" (1): Mediciones con turbidez > 150 NTU.
+
+Para asegurar una comparación equitativa, todas las muestras del conjunto de prueba con valores de turbidez entre 50 y 150 NTU fueron excluidas del cálculo de las métricas de clasificación, replicando la metodología del paper que busca una separación clara entre clases. Con las predicciones y etiquetas ya binarizadas, se procedió a calcular el F1-Score y el AUC.
+
+-- Comparación y resultados 
+
+Usando los umbrales del paper para clasificación: Bajo (<50.0) y Alto (>150.0).     
+De las 945 muestras de prueba, se usarán 223 para la comparación (excluyendo valores intermedios).
+F1-Score (método paper): 0.9389
+AUC (método paper): 1.0000
+
+--- Comparación Final con el Paper (para Turbidez) ---
+Métrica      | Tu Transformer | Paper (LSTM)
+-------------|----------------|---------------
+F1-Score     | 0.9389         | 0.5490
+AUC          | 1.0000         | 0.6880
+-------------------------------------------------
+
+AUC (1.0000 vs. 0.6880)
+Este es el resultado más impresionante. Un AUC de 1.0 es la puntuación perfecta 🏆.
+
+Significa que tu modelo puede distinguir perfectamente entre las muestras de turbidez "Baja" y "Alta" en el conjunto de prueba. Si le das una muestra de cada clase, siempre asignará una "probabilidad" más alta a la muestra de la clase "Alta". No hay ambigüedad en su capacidad de separación. El modelo del paper (0.6880) tenía una capacidad de distinción considerablemente más débil.
